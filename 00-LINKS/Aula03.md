@@ -10,13 +10,13 @@ sudo apt update; sudo apt install -y nginx
 - nginx em us-east1-b
 
 ```sh
-sudo sed -i 's/nginx!/nginx-us-east2-a/g' /var/www/html/index.nginx-debian.html
+sudo sed -i 's/nginx!/nginx-us-east-2a/g' /var/www/html/index.nginx-debian.html
 ```
 
 - nginx em us-east1-c 
 
 ```sh
-sudo sed -i 's/nginx!/nginx-us-east2-b/g' /var/www/html/index.nginx-debian.html
+sudo sed -i 's/nginx!/nginx-us-east-2b/g' /var/www/html/index.nginx-debian.html
 ```
 
 
