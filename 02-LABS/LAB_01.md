@@ -43,7 +43,7 @@ DICA2: após criação do security group, consulte o ID na console da AWS!
 7. Access a instancia **vm1** via `EC2 Instance Connect` e instale o serviço de nginx no servidor: 
 
 ```sh
-sudo update; sudo apt install nginx -y
+sudo apt update; sudo apt install nginx -y
 ```
 
 8. Teste o acesso ao serviço do nginx acessando o ip público da intância.
