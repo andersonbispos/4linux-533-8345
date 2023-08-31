@@ -1,3 +1,10 @@
+#### FLUXO BÁSICO
+
+write .tf -> terraform init -> terraform plan -> terraform apply
+
+write .tf ~> terraform fmt -> terraform init ~> terraform validate -> terraform plan -> terraform apply ~> terraform destroy
+
+
 #### ALTERANDO O PÁGINA INICIAL DO NGINX
 
 - instalar o nginx:
