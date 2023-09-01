@@ -64,6 +64,10 @@ base64encode("#!/bin/bash\n sudo apt update; sudo apt install nginx -y")
 
 18. Em um browser acesse os ips públicos dos servidores web1 e web2 para garantir que o nginx foi instalado.
 
+`
+DICA: vc precisa ter associado o security group allow-default-ports as intancias para que seja possivel testar o nginx.
+`
+
 19. Destrua todo o ambiente e valide que todos os elementos foram removidos via validação do state e também via console.
 
 ##### Criando o ambiente completo, com um só comando.
