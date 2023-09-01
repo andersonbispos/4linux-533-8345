@@ -10,5 +10,5 @@ resource "aws_instance" "web" {
     Name = "web-instance"
   }
 
-  depends_on = [ aws_route_table_association.rt_public_subnet_association ]
+  depends_on = [aws_route_table_association.rt_public_subnet_association]
 }
