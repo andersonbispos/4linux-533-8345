@@ -18,17 +18,19 @@ Caso haja qualquer erro, leia atentamente o terminal.
 
 **- Na primeira parte** do LAB será criada uma vpc, duas subnets e um security group.
 
-2. Crie o código de uma vpc, com o nome tf-vpc-lab, na faixa **192.168.0.0/16** na região **sa-east-1** rode apenas o validate e o plan, não aplique a infraestrutura ainda.
+1. Crie o código de uma vpc, com o nome tf-vpc-lab, na faixa **192.168.0.0/16** na região **sa-east-1** rode apenas o validate e o plan, não aplique a infraestrutura ainda.
 
-3. Crie o código de uma subnet1 com faixa **192.168.10.0/24**, na zona **sa-east-1b** vinculada a vpc: tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
+1. Crie o código de uma subnet1 com faixa **192.168.10.0/24**, na zona **sa-east-1b** vinculada a vpc: tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
 
-4. Crie o código de uma subnet2 com faixa **192.168.20.0/24**, na zona **sa-east-1c** vinculada a vpc: tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
+1. Crie o código de uma subnet2 com faixa **192.168.20.0/24**, na zona **sa-east-1c** vinculada a vpc: tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
 
-5. Crie um security group com o nome 'allow-default-ports' liberando o protocolo icmp e a porta 80 para 0.0.0.0/0, na rede tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
+1. Crie um security group com o nome 'allow-default-ports' liberando o protocolo icmp e a porta 80 para 0.0.0.0/0, na rede tf-vpc-lab. Rode apenas o validate e o plan, não aplique a infraestrutura ainda.
 
-6. Aplique a configuração criada até aqui e, observe se os elementos foram criados na ordem correta obedecendo as dependências definidas.
+1. Crie um internet gateway uma tabela de rotas apontando a roda default para o igw e associe a tabela com as duas subnets.
 
-7. Valide via `terraform state list` e também via console que o ambiente foi criado corretamente.
+1. Aplique a configuração criada até aqui e, observe se os elementos foram criados na ordem correta obedecendo as dependências definidas.
+
+1. Valide via `terraform state list` e também via console que o ambiente foi criado corretamente.
 
 ##### Preparando o ambiente de processamento
 
