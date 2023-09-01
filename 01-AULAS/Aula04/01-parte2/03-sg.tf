@@ -2,6 +2,8 @@ resource "aws_security_group" "allow_default" {
   name        = "allow_default"
   description = "allow_default"
 
+  vpc_id = aws_vpc.vpc_terraform.id
+
   ingress {
     description = "Allow ICMP"
     from_port   = -1
