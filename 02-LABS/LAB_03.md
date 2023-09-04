@@ -28,11 +28,11 @@ Utilize referências implicitas e explicitas se necessário.
 
 3. Crie duas novas subnets na vpc-teste. Utilize referências implicitas para referenciar a vpc_teste.
 
-4. Crie um security **NA VPC DEFAULT** liberando a porta e o icmp tcp/22 para 0.0.0.0/0.
+4. Crie um security group **NA VPC DEFAULT** liberando a porta e o icmp tcp/22 para 0.0.0.0/0.
 
 `Lembrete: não é preciso colocar o parâmetro vpc_id para criar um SG na vpc default.`
 
-5. Crie um security **na vpc_teste** liberando a porta e o icmp tcp/22 para 0.0.0.0/0. Utilize referências implicitas para referenciar a vpc_teste.
+5. Crie um security group **na vpc_teste** liberando a porta e o icmp tcp/22 para 0.0.0.0/0. Utilize referências implicitas para referenciar a vpc_teste.
 
 6. Valide via terraform state e via console que os recursos foram criados com sucesso.
 
