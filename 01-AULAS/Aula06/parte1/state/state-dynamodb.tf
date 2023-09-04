@@ -10,7 +10,6 @@ resource "aws_dynamodb_table" "db_table_state" {
   }
 
   tags = {
-    Name        = "db_table_state"
-    Environment = "production"
+    Name = "db_table_state"
   }
 }
