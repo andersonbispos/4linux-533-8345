@@ -1,8 +1,10 @@
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "state-bucket-098273213"
 
+  force_destroy = true # em producao manter essa opcao como false
+
   tags = {
-    Name        = "state-bucket-098273213"
+    Name = "state-bucket-098273213"
   }
 }
 
