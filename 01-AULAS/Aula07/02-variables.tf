@@ -70,7 +70,7 @@ variable "disk_size" {
   default = 10
 
   validation {
-    condition = var.disk_size <= 50
+    condition     = var.disk_size <= 50
     error_message = "O disco deve ser de no maximo 50 GB"
   }
 }
