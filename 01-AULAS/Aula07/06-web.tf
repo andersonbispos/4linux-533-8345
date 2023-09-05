@@ -2,7 +2,7 @@ resource "aws_instance" "web1" {
   ami           = var.default_web_image
   instance_type = var.default_web_size
 
-  subnet_id = aws_subnet.subnet1.id
+  subnet_id = aws_subnet.public_subnet.id
 
   associate_public_ip_address = var.instance_public_ip
 

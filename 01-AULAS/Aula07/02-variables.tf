@@ -43,7 +43,7 @@ variable "subnet_private_zone" {
 variable "default_web_image" {
   description = "Imagem a ser utilizada na criacao da instancia WEB"
   type        = string
-  default     = "ami-0af6e9042ea5a4e3e" # ami ubuntu us-east-2
+  default     = "ami-024e6efaf93d85776" # ami ubuntu us-east-2
 }
 
 variable "default_web_size" {
@@ -59,6 +59,18 @@ variable "instance_public_ip" {
 }
 
 variable "user_data_path" {
-  type = string
+  type    = string
   default = "./scripts/user-data.sh"
+}
+
+## volume variables
+
+variable "disk_size" {
+  type    = number
+  default = 10
+
+  validation {
+    condition = var.disk_size <= 50
+    error_message = "O disco deve ser de no maximo 50 GB"
+  }
 }
