@@ -43,5 +43,5 @@ variable "subnet_private_zone" {
 variable "ami_ubuntu" {
   description = "Imagem a ser utilizada na criacao da instancia WEB"
   type        = string
-  default     = "ami-06e46074ae430fba6"
+  default     = "ami-0af6e9042ea5a4e3e" # ami ubuntu us-east-2
 }
