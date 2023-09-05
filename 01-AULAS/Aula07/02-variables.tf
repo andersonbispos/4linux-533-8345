@@ -57,3 +57,8 @@ variable "instance_public_ip" {
   type        = bool
   default     = true
 }
+
+variable "user_data_path" {
+  type = string
+  default = "./scripts/user-data.sh"
+}

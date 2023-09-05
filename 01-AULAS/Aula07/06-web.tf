@@ -8,7 +8,7 @@ resource "aws_instance" "web1" {
 
   vpc_security_group_ids = [aws_security_group.allow_default.id]
 
-  user_data = base64encode("#!/bin/bash\n sudo apt update; sudo apt install nginx -y")
+  user_data = filebase64(var.user_data_path)
 
   tags = {
     Name = "web1"
