@@ -40,8 +40,20 @@ variable "subnet_private_zone" {
 
 ### variaveis de instancias
 
-variable "ami_ubuntu" {
+variable "default_web_image" {
   description = "Imagem a ser utilizada na criacao da instancia WEB"
   type        = string
   default     = "ami-0af6e9042ea5a4e3e" # ami ubuntu us-east-2
+}
+
+variable "default_web_size" {
+  description = "Size a ser utilizada na criacao da instancia WEB"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "instance_public_ip" {
+  description = "Define se a instancia deve ter ip publico"
+  type        = bool
+  default     = true
 }
