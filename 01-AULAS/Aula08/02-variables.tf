@@ -84,6 +84,11 @@ variable "user_data_path" {
 
 ## volume variables
 
+variable "disk_zone" {
+  type    = string
+  default = "us-east-2a"
+}
+
 variable "disk_size" {
   type    = number
   default = 10
@@ -91,5 +96,18 @@ variable "disk_size" {
   validation {
     condition     = var.disk_size <= 50
     error_message = "O disco deve ser de no maximo 50 GB"
+  }
+}
+
+variable "tuple_disk" {
+  type    = tuple([string, number])
+  default = ["us-east-2a", 10]
+}
+
+variable "object_disk" {
+  type = object({ zone = string, size = number })
+  default = {
+    zone = "us-east-2a"
+    size = 10
   }
 }
