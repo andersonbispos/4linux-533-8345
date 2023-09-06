@@ -58,22 +58,10 @@ variable "subnet_private1_cidr" {
   default     = "172.31.20.0/24"
 }
 
-variable "subnet_private1_zone" {
-  description = "Zone em que sera criada a subnet privada"
-  type        = string
-  default     = "us-east-2a"
-}
-
 variable "subnet_private2_cidr" {
   description = "Bloco CIDR para ser utilizado na subnet privada"
   type        = string
   default     = "172.31.21.0/24"
-}
-
-variable "subnet_private2_zone" {
-  description = "Zone em que sera criada a subnet privada"
-  type        = string
-  default     = "us-east-2b"
 }
 
 variable "subnet_private3_cidr" {
@@ -82,11 +70,19 @@ variable "subnet_private3_cidr" {
   default     = "172.31.22.0/24"
 }
 
-variable "subnet_private3_zone" {
-  description = "Zone em que sera criada a subnet privada"
-  type        = string
-  default     = "us-east-2c"
+variable "list_subnets_zones" {
+  description = "zones onde serão criadas as subnets"
+  type        = list(string)
+  default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
 }
+
+variable "private_subnets_cidrs" {
+  description = "cidrs onde serão criadas as subnets"
+  type        = list(string)
+  default     = ["172.31.20.0/24", "172.31.21.0/24", "172.31.22.0/24"]
+}
+
+
 
 ### variaveis de instancias
 
