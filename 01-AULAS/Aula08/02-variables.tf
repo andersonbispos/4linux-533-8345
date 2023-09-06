@@ -9,77 +9,41 @@ variable "vpc_cidr" {
 variable "vpc_name" {
   description = "Nome para ser utilizado ao criar a VPC"
   type        = string
-  default     = "vpc_aula06"
+  default     = "vpc_aula08"
 }
 
 ## variaveis das subnets public
 
-variable "subnet_public1_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet publica"
-  type        = string
-  default     = "172.31.10.0/24"
+variable "map_subnets_zones" {
+  description = "zonas das subnets publicas"
+  type = map(string)
+  default = {
+    public_subnet0 = "us-east-2a"
+    public_subnet1 = "us-east-2b"
+  }
 }
 
-variable "subnet_public1_zone" {
-  description = "Zone em que sera criada a subnet publica"
-  type        = string
-  default     = "us-east-2a"
-}
-
-variable "subnet_public2_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet publica"
-  type        = string
-  default     = "172.31.11.0/24"
-}
-
-variable "subnet_publi2_zone" {
-  description = "Zone em que sera criada a subnet publica"
-  type        = string
-  default     = "us-east-2b"
-}
-
-variable "subnet_public3_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet publica"
-  type        = string
-  default     = "172.31.12.0/24"
-}
-
-variable "subnet_public3_zone" {
-  description = "Zone em que sera criada a subnet publica"
-  type        = string
-  default     = "us-east-2c"
+variable "map_subnets_faixas" {
+  description = "zonas das subnets publicas"
+  type = map(string)
+  default = {
+    public_subnet0 = "172.31.10.0/24"
+    public_subnet1 = "172.31.11.0/24"
+  }
 }
 
 ## variaveis das subnets private
 
-variable "subnet_private1_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet privada"
-  type        = string
-  default     = "172.31.20.0/24"
-}
-
-variable "subnet_private2_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet privada"
-  type        = string
-  default     = "172.31.21.0/24"
-}
-
-variable "subnet_private3_cidr" {
-  description = "Bloco CIDR para ser utilizado na subnet privada"
-  type        = string
-  default     = "172.31.22.0/24"
-}
-
 variable "list_subnets_zones" {
   description = "zones onde serão criadas as subnets"
   type        = list(string)
-  default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
+  default     = ["us-east-2a", "us-east-2b"]
 }
 
 variable "private_subnets_cidrs" {
   description = "cidrs onde serão criadas as subnets"
   type        = list(string)
-  default     = ["172.31.20.0/24", "172.31.21.0/24", "172.31.22.0/24"]
+  default     = ["172.31.20.0/24", "172.31.21.0/24"]
 }
 
 

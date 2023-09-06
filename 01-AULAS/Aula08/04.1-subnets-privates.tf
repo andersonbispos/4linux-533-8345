@@ -1,15 +1,15 @@
 resource "aws_subnet" "private_subnet" {
 
-  count = 3
+  count = length(var.list_subnets_zones)
 
-  vpc_id     = aws_vpc.vpc_teste.id
-  
+  vpc_id = aws_vpc.vpc_teste.id
+
   cidr_block = var.private_subnets_cidrs[count.index]
 
   availability_zone = var.list_subnets_zones[count.index]
 
   tags = {
-    Name = format("private_subnet-%s-%s", var.vpc_name, var.list_subnets_zones[count.index])
+    Name = format("private_sub-%s-%s-%s", count.index, var.vpc_name, var.list_subnets_zones[count.index])
   }
 }
 
