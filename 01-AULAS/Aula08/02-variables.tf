@@ -16,7 +16,7 @@ variable "vpc_name" {
 
 variable "map_subnets_zones" {
   description = "zonas das subnets publicas"
-  type = map(string)
+  type        = map(string)
   default = {
     public_subnet0 = "us-east-2a"
     public_subnet1 = "us-east-2b"
@@ -25,10 +25,19 @@ variable "map_subnets_zones" {
 
 variable "map_subnets_faixas" {
   description = "zonas das subnets publicas"
-  type = map(string)
+  type        = map(string)
   default = {
     public_subnet0 = "172.31.10.0/24"
     public_subnet1 = "172.31.11.0/24"
+  }
+}
+
+variable "public_subnets_defs" {
+  description = "zonas das subnets publicas"
+  type        = map(string)
+  default = {
+    us-east-2a = "172.31.10.0/24"
+    us-east-2b = "172.31.11.0/24"
   }
 }
 
