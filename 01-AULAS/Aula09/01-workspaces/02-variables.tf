@@ -5,6 +5,7 @@ variable "map_ambientes" {
   type        = map(string)
   default = {
     dev  = "us-east-2"
+    #prod  = "us-east-2"
     prod = "sa-east-1"
   }
 }
@@ -44,6 +45,15 @@ variable "default_web_size" {
   description = "Size a ser utilizada na criacao da instancia WEB"
   type        = string
   default     = "t3.micro"
+}
+
+variable "map_web_image" {
+  description = "Imagem a ser utilizada na criacao da instancia WEB"
+  type        = map(string)
+  default     = {
+    dev = "ami-024e6efaf93d85776" # ami ubuntu us-east-2
+    prod = "ami-0af6e9042ea5a4e3e" # ami ubuntu sa-east-1
+  }
 }
 
 variable "map_web_sizes" {

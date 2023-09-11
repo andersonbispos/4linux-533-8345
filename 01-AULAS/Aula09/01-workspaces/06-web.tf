@@ -2,7 +2,7 @@ resource "aws_instance" "web1" {
 
   count = terraform.workspace == "prod" ? 3 : 1
 
-  ami           = var.default_web_image
+  ami           = var.map_web_image[terraform.workspace]
   instance_type = var.map_web_sizes[terraform.workspace]
 
   associate_public_ip_address = var.instance_public_ip
