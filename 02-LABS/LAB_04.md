@@ -14,7 +14,7 @@ Aproveite parar fazer seus testes, todo novo recurso que for criado, faça sempr
 
 #### Trabalhando com workspaces
 
-1. Crie um novo diretorio LAB08 e copie o arquivo de `provider` para esse diretório
+1. Crie um novo diretorio LAB04 e copie o arquivo de `provider` para esse diretório
 
 1. Crie um workspace com o nome prod.
 
