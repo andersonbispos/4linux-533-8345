@@ -8,12 +8,12 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = var.map_ambientes[terraform.workspace]
   #access_key = ""
   #secret_key = ""
   default_tags {
     tags = {
-      Environment = "Lab"
+      Environment = terraform.workspace
       Terraform   = "yes"
     }
   }

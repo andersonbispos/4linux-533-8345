@@ -1,6 +1,9 @@
 resource "aws_instance" "web1" {
+
+  count = terraform.workspace == "prod" ? 3 : 1
+
   ami           = var.default_web_image
-  instance_type = var.default_web_size
+  instance_type = var.map_web_sizes[terraform.workspace]
 
   associate_public_ip_address = var.instance_public_ip
 
@@ -9,6 +12,6 @@ resource "aws_instance" "web1" {
   #user_data = filebase64(var.user_data_path)
 
   tags = {
-    Name = format("web1-%s", terraform.workspace)
+    Name = format("web-%s-%s", count.index, terraform.workspace)
   }
 }

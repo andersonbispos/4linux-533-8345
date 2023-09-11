@@ -1,3 +1,16 @@
+## variaveis geral
+
+variable "map_ambientes" {
+  description = "Size a ser utilizada na criacao da instancia WEB"
+  type        = map(string)
+  default = {
+    dev  = "us-east-2"
+    prod = "sa-east-1"
+  }
+}
+
+### variaveis rede
+
 variable "vpc_cidr" {
   description = "Bloco CIDR para ser utilizado ao criar a VPC"
   type        = string
@@ -31,6 +44,15 @@ variable "default_web_size" {
   description = "Size a ser utilizada na criacao da instancia WEB"
   type        = string
   default     = "t3.micro"
+}
+
+variable "map_web_sizes" {
+  description = "Size a ser utilizada na criacao da instancia WEB"
+  type        = map(string)
+  default = {
+    dev  = "t3.micro"
+    prod = "t3.medium"
+  }
 }
 
 variable "instance_public_ip" {
