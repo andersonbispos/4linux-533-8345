@@ -11,7 +11,7 @@ resource "aws_instance" "web" {
 
   associate_public_ip_address = true
 
-  subnet_id              = aws_subnet.public_subnet.id
+  subnet_id              = module.vpc.public_subnet_id
   vpc_security_group_ids = [module.vpc.sg_id]
 
   tags = {
