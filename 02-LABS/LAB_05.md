@@ -4,7 +4,7 @@
 2. [terraform-docs](https://terraform-docs.io/ "terraform-docs")
 ---
 
-### Practice Labs - Lab 09
+### Practice Labs - Lab 05
 
 Criando e usando módulos locais
 
