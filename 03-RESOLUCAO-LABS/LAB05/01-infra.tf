@@ -1,7 +1,7 @@
 module "vpc" {
   source = "./modules/rede"
 
-  vpc_cidr = "10.10.1.0/16"
+  vpc_cidr = "10.10.0.0/16"
 }
 
 resource "aws_subnet" "public_subnet" {
@@ -18,5 +18,5 @@ resource "aws_subnet" "public_subnet" {
 
 resource "aws_route_table_association" "rt_public_subnet_association" {
   subnet_id      = aws_subnet.public_subnet.id
-  route_table_id = aws_route_table.rt_public.id
+  route_table_id = module.vpc.rt_public_id
 }
