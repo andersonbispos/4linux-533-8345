@@ -12,3 +12,8 @@ output "rt_public_id" {
   description = "ID da tabela de rotas publica"
   value = aws_route_table.rt_public.id
 }
+
+output "sg_id" {
+    description = "ID do Security Group"
+    value = aws_security_group.allow_default.id
+}

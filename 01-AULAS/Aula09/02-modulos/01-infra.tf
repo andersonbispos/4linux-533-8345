@@ -26,10 +26,10 @@ resource "aws_instance" "web" {
   ami           = "ami-024e6efaf93d85776"
   instance_type = "t2.micro"
 
-  associate_public_ip_address = "yes"
+  associate_public_ip_address = true
 
-  subnet_id = aws_subnet.public_subnet.id
-  vpc_security_group_ids = [aws_security_group.allow_default.id]
+  subnet_id              = aws_subnet.public_subnet.id
+  vpc_security_group_ids = [module.vpc.sg_id]
 
   tags = {
     Name = "web"
