@@ -29,3 +29,20 @@ resource "aws_route_table" "rt_public" {
     Name = format("rt-public-%s", var.vpc_name)
   }
 }
+
+resource "aws_subnet" "public_subnet" {
+  vpc_id     = module.vpc.vpc_id
+  cidr_block = cidrsubnet(var.vpc_cidr,24,1)
+
+  availability_zone       = var.subnet_zone
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = format("public_subnet-%s", var.vpc_name)
+  }
+}
+
+resource "aws_route_table_association" "rt_public_subnet_association" {
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.rt_public.id
+}

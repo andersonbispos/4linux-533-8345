@@ -3,6 +3,11 @@ output "vpc_id" {
   value = aws_vpc.vpc_default.id
 }
 
+output "public_subnet_id" {
+  description = "ID da subnet publica default"
+  value = aws_subnet.public_subnet.id
+}
+
 output "igw_id" {
   description = "ID da Internet Gateway"
   value = aws_internet_gateway.gw.id

@@ -11,3 +11,8 @@ variable "vpc_cidr" {
   type        = string
 }
 
+variable "subnet_zone" {
+  description = "Zona onde deve ser criada a subnet default"
+  type = string
+  default = "us-east-2a"
+}
