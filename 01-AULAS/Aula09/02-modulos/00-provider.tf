@@ -5,7 +5,6 @@ terraform {
       version = "5.14.0"
     }
   }
-
 }
 
 provider "aws" {
@@ -13,6 +12,9 @@ provider "aws" {
   #access_key = ""
   #secret_key = ""
   default_tags {
-    tags = local.common_tags
+    tags = {
+      Environment = "modules"
+      Terraform   = "yes"
+    }
   }
 }
