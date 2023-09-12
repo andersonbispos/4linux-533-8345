@@ -26,11 +26,11 @@ module "web" {
 
   instance_name = "web"
 
-  instance_zone = aws_subnet.public_subnet.availability_zone
+  instance_zone   = aws_subnet.public_subnet.availability_zone
   instance_subnet = aws_subnet.public_subnet.id
-  instance_sgs = [module.vpc.sg_id]
+  instance_sgs    = [module.vpc.sg_id]
 }
 
 output "web_ip" {
-    value = module.web.instance_public_ip  
+  value = module.web.instance_public_ip
 }
