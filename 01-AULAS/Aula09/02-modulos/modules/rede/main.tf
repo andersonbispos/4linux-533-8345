@@ -31,8 +31,8 @@ resource "aws_route_table" "rt_public" {
 }
 
 resource "aws_subnet" "public_subnet" {
-  vpc_id     = module.vpc.vpc_id
-  cidr_block = cidrsubnet(var.vpc_cidr,24,1)
+  vpc_id     = aws_vpc.vpc_default.id
+  cidr_block = cidrsubnet(var.vpc_cidr,8,1)
 
   availability_zone       = var.subnet_zone
   map_public_ip_on_launch = true
