@@ -33,38 +33,40 @@ Para garantir que seu Terraform consiga realizar a criação de todos recursos c
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowSpecifics",
-            "Action": [
-                "ec2:*", 
-                "s3:*", 
-                "elasticloadbalancing:*", 
-                "autoscaling:*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        },
-        {
-            "Sid": "DenySpecifics",
-            "Action": [
-                "iam:*User*",
-                "iam:*Login*",
-                "iam:*Group*",
-                "iam:*Provider*",
-                "aws-portal:*",
-                "budgets:*",
-                "config:*",
-                "directconnect:*",
-                "aws-marketplace:*",
-                "aws-marketplace-management:*",
-                "ec2:*ReservedInstances*"
-            ],
-            "Effect": "Deny",
-            "Resource": "*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowSpecifics",
+			"Action": [
+				"ec2:*",
+				"s3:*",
+				"elasticloadbalancing:*",
+				"autoscaling:*",
+				"dynamodb:*",
+				"ssm:*"
+			],
+			"Effect": "Allow",
+			"Resource": "*"
+		},
+		{
+			"Sid": "DenySpecifics",
+			"Action": [
+				"iam:*User*",
+				"iam:*Login*",
+				"iam:*Group*",
+				"iam:*Provider*",
+				"aws-portal:*",
+				"budgets:*",
+				"config:*",
+				"directconnect:*",
+				"aws-marketplace:*",
+				"aws-marketplace-management:*",
+				"ec2:*ReservedInstances*"
+			],
+			"Effect": "Deny",
+			"Resource": "*"
+		}
+	]
 }
 ```
 
